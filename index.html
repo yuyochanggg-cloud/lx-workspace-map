@@ -458,7 +458,10 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         prompt: "我想在 Gmail 設定一個篩選器,把某個寄件者寄來的信自動加上標籤",
         search: "Gmail 篩選器",
         link: "https://support.google.com/mail/?hl=zh-Hant",
-        tip: "只設定「寄件者」當條件容易漏接——同一個人可能換信箱寄信,或是經手轉寄後寄件者就變了。建議同時勾選「包含字詞」,填入信件標題或內文一定會出現的關鍵字(例如廠商名稱、單據編號開頭),兩個條件一起比對,漏抓的機率會低很多。另外,如果分類後不想讓這些信出現在收件匣,建立篩選器時記得勾選「略過收件匣(將其封存)」,並勾選「永不移至垃圾郵件」,不然重要通知可能被系統誤判成垃圾信。"
+        tip: [
+          "只設定「寄件者」當條件容易漏接——同一個人可能換信箱寄信,或是經手轉寄後寄件者就變了。建議同時勾選「包含字詞」,填入信件標題或內文一定會出現的關鍵字(例如廠商名稱、單據編號開頭),兩個條件一起比對,漏抓的機率會低很多。",
+          "如果分類後不想讓這些信出現在收件匣,建立篩選器時記得勾選「略過收件匣(將其封存)」,並勾選「永不移至垃圾郵件」,不然重要通知可能被系統誤判成垃圾信。"
+        ]
       },
       {
         title: "簽名檔",
@@ -795,7 +798,10 @@ function waypointDetail(w, regionId, idx) {
       </div>`;
   }
   if (w.tip) {
-    blocks += `<div class="detail-block"><div class="note-box" style="border:1px solid var(--rc);"><b style="color:var(--rc);">小技巧：</b>${w.tip}</div></div>`;
+    const tipBody = Array.isArray(w.tip)
+      ? `<ul style="margin:6px 0 0;padding-left:18px;">${w.tip.map(t => `<li style="margin-bottom:4px;">${t}</li>`).join("")}</ul>`
+      : w.tip;
+    blocks += `<div class="detail-block"><div class="note-box" style="border:1px solid var(--rc);"><b style="color:var(--rc);">小技巧：</b>${tipBody}</div></div>`;
   }
   if (w.assets) {
     blocks += `
