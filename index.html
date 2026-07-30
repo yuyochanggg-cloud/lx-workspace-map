@@ -341,6 +341,18 @@ const DATA = [
     desc: "先把瀏覽器本身設定好,後面才順。",
     waypoints: [
       {
+        title: "建立與切換 Chrome 設定檔",
+        teaser: "公司帳號開一個獨立設定檔,跟個人帳號分開用",
+        one: "設定檔就像瀏覽器裡的「不同使用者」:公司帳號一個、個人帳號一個,各自的書籤、密碼、登入狀態完全分開,不會混在一起。這也是下一站「書籤與密碼搬家」的前提——要先有公司設定檔,才有地方可以匯入。",
+        prompt: "Chrome 要怎麼新增一個設定檔並登入公司的 Google 帳號?要怎麼在不同設定檔之間切換?",
+        search: "Chrome 設定檔 新增 切換",
+        link: "https://support.google.com/chrome/?hl=zh-Hant",
+        tip: [
+          "不確定現在用的是哪個帳號,看瀏覽器右上角的頭像圖示,或隨便開一個 Google 頁面看右上角登入的是誰。用錯帳號登入公司系統是最常見的困擾來源。",
+          "建議把公司設定檔的名稱和主題顏色設得跟個人不一樣,視窗一開就分得出來,不會弄錯。"
+        ]
+      },
+      {
         title: "書籤與密碼搬家",
         teaser: "把舊個人 Gmail 帳號的書籤、密碼搬到公司帳號",
         one: "這是兩個不同帳號之間搬資料,不是開同步(同步只在同一組帳號的不同裝置間生效)。做法是:在個人帳號的 Chrome 設定檔裡把書籤匯出成一個檔案,密碼另外匯出成一個檔案,再到公司帳號的設定檔裡個別匯入。",
@@ -464,6 +476,20 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         ]
       },
       {
+        title: "搜尋:找信、找訊息",
+        teaser: "與其一封封翻,不如學會怎麼搜",
+        one: "信箱不用手動整理到完美,重點是搜得到。Gmail 和 Chat 都有很強的搜尋,學會之後找東西的時間會差很多。",
+        prompt: "Gmail 要怎麼搜尋特定寄件者、有附件、或某個日期之後的信?",
+        search: "Gmail 搜尋",
+        link: "https://support.google.com/mail/?hl=zh-Hant",
+        tip: [
+          "不用背語法。點搜尋框右邊的下拉箭頭,會出現一張表單(寄件者、主旨、有附件、日期範圍),填完按搜尋就好。",
+          "填完表單後回頭看搜尋框,你會發現剛剛填的變成一串文字(例如 from:王小明 has:attachment)。下次要找同樣的東西,直接把那串打進去更快。",
+          "空間不夠時好用:搜尋 larger:10M older_than:1y,找出一年前、超過 10MB 的信,這些通常是可以清掉的舊附件。",
+          "Chat 聊天室也有搜尋(右上角)。到【Workspace疑難雜症QA】提問前先搜一下,通常已經有人問過。"
+        ]
+      },
+      {
         title: "簽名檔",
         teaser: "每封信自動附上職稱與聯絡方式",
         one: "設定一次,之後每封新信、回信都會自動帶上你的簽名檔,不用手打。",
@@ -552,12 +578,16 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         linkLabel: "開啟 Google 聯絡人"
       },
       {
-        title: "副本、密件副本的差異",
-        teaser: "抄送給誰看得到、誰看不到,群發信要注意",
+        title: "副本、密件副本、回覆全部",
+        teaser: "誰看得到誰的信箱,以及按錯「回覆全部」的風險",
         one: "副本(Cc)欄位裡的每個人都看得到彼此的信箱;密件副本(Bcc)則是收件人看不到其他密件副本名單。群發給外部或大量對象時用密件副本,保護大家的信箱不外流。",
         prompt: "Gmail 寄信的副本(Cc)和密件副本(Bcc)差在哪裡,什麼情況該用哪一個?",
         search: "Gmail Cc Bcc 差異",
-        link: "https://support.google.com/mail/?hl=zh-Hant"
+        link: "https://support.google.com/mail/?hl=zh-Hant",
+        tip: [
+          "對外群發(廠商、客戶、應徵者)一律用密件副本,不要用副本,否則所有收件人的信箱會互相看到。",
+          "回信前先看清楚按的是「回覆」還是「回覆全部」。「回覆全部」會寄給原本所有收件人,包含外部的人——內部討論不小心按到回覆全部,是最常見的信件災難。"
+        ]
       }
     ]
   },
@@ -586,10 +616,11 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/calendar/?hl=zh-Hant"
       },
       {
-        title: "手機 Google 日曆",
-        teaser: "手機裝 App,登入公司帳號隨時看行程",
-        one: "從手機的應用程式商店安裝「Google 日曆」,用公司帳號登入,就會自動同步電腦上的所有行程與提醒。",
-        search: "Google 日曆 App",
+        title: "手機:Gmail 與日曆",
+        teaser: "手機裝 App 登入公司帳號,信件和行程隨時看",
+        one: "到手機的應用程式商店裝「Gmail」和「Google 日曆」,都用公司帳號登入,信件與行程會自動同步。記得允許通知,不然等於沒裝。(Chat 的手機 App 在下面 Chat 那一區有講)",
+        prompt: "手機要怎麼安裝 Gmail 和 Google 日曆並登入公司帳號?",
+        search: "Gmail App / Google 日曆 App",
         link: "https://support.google.com/calendar/?hl=zh-Hant"
       },
       {
@@ -626,6 +657,14 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "有問題,找這裡的人,不要自己猜。",
     waypoints: [
       {
+        title: "先裝到桌面、手機也要裝",
+        teaser: "裝了並開通知,下面兩個聊天室才會真的看到訊息",
+        one: "這一站要先做。電腦版可以把 Chat 安裝成獨立桌面應用程式,手機也要裝 Google Chat App,兩邊都要允許通知——沒裝、沒開通知的話,就算加入了聊天室也不會知道有新訊息。",
+        prompt: "怎麼把 Google Chat 安裝成電腦桌面應用程式並開啟通知?手機要怎麼裝 Google Chat App?",
+        search: "Google Chat 安裝應用程式 通知",
+        link: "https://support.google.com/chat/?hl=zh-Hant"
+      },
+      {
         title: "Workspace疑難雜症聊天室",
         teaser: "所有 Workspace 使用問題的唯一窗口",
         one: "任何操作卡住、不確定該怎麼做的,先用聊天室右上角的搜尋看有沒有人問過,沒有再發問。",
@@ -658,14 +697,6 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           "搜尋不到的話,到【Workspace疑難雜症QA】聊天室反映"
         ],
         stepsLabel: "安裝方式"
-      },
-      {
-        title: "把 Chat 裝到桌面、手機也要裝",
-        teaser: "裝了才會跳通知,不然訊息容易漏看",
-        one: "電腦版可以把 Chat 安裝成獨立桌面應用程式,手機也要裝 Google Chat App 並開啟通知,不然重要訊息容易漏掉。",
-        prompt: "怎麼把 Google Chat 安裝成電腦桌面應用程式並開啟通知?手機要怎麼裝 Google Chat App?",
-        search: "Google Chat 安裝應用程式 通知",
-        link: "https://support.google.com/chat/?hl=zh-Hant"
       },
       {
         title: "回覆與釘選,避免洗版",
