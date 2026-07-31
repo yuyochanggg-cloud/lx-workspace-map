@@ -414,7 +414,7 @@ const DATA = [
       {
         title: "書籤與密碼搬家",
         teaser: "把舊個人 Gmail 帳號的書籤、密碼搬到公司帳號",
-        one: "這是兩個不同帳號之間搬資料,不是開同步(同步只在同一組帳號的不同裝置間生效)。做法是:在個人帳號的 Chrome 設定檔裡把書籤匯出成一個檔案,密碼另外匯出成一個檔案,再到公司帳號的設定檔裡個別匯入。",
+        one: "這是兩個不同帳號之間搬資料,不是開同步(同步只在同一組帳號的不同裝置間生效)。做法是:在個人帳號的 Chrome 設定檔裡把書籤匯出成一個檔案,密碼另外匯出成一個檔案,再到公司帳號的設定檔裡個別匯入。密碼匯出檔含有明碼,請勿傳送或上傳雲端;完成匯入並確認後立即刪除。",
         prompt: "我要把個人 Gmail 帳號的 Chrome 書籤和已儲存密碼,搬到公司的 Gmail 帳號,怎麼做?",
         search: "Chrome 書籤 匯出入 / Chrome 密碼 匯出入",
         link: "https://support.google.com/chrome/?hl=zh-Hant"
@@ -435,8 +435,8 @@ const DATA = [
       {
         tier: "must",
         title: "Gemini in Chrome",
-        teaser: "側邊欄直接問 AI,它看得到你正在瀏覽的畫面",
-        one: "不用截圖說明「這顆按鈕在哪」,Gemini 會直接讀取你當下打開的網頁來回答。",
+        teaser: "側邊欄直接問 AI,可依目前分享的頁面內容協助回答",
+        one: "不用截圖說明「這顆按鈕在哪」,Gemini 可依目前分享的網頁內容回答。含個資、薪資或客戶資料的頁面,請先確認分享狀態再使用。",
         prompt: "Gemini in Chrome 的側邊欄要怎麼打開?",
         search: "Gemini in Chrome",
         link: "https://support.google.com/chrome/?hl=zh-Hant",
@@ -446,7 +446,7 @@ const DATA = [
         tier: "must",
         title: "良興 Workspace 小幫手（技能）",
         teaser: "把公司的使用規則裝進 Gemini,問問題不用每次解釋方案限制",
-        one: "這是公司自建的,不是 Google 官方功能。裝好之後每次開 Gemini in Chrome 側邊欄都會沿用,問任何 Workspace 問題都會照公司的規則回答。",
+        one: "這是公司自建的,不是 Google 官方功能。技能會保存在 Gemini 清單中;每次提問前輸入「/」並選擇「良興 Workspace 小幫手」,即可套用公司的使用規則。",
         steps: [
           "打開 Gemini in Chrome 側邊欄",
           "找到「技能」或「新增技能」的入口",
@@ -553,8 +553,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       },
       {
         tier: "time",
-        title: "搜尋:找信、找訊息",
-        teaser: "與其一封封翻,不如學會怎麼搜",
+        title: "搜尋：快速找到信件與訊息",
+        teaser: "學會搜尋,比逐封查找更有效率",
         one: "信箱不用手動整理到完美,重點是搜得到。Gmail 和 Chat 都有很強的搜尋,學會之後找東西的時間會差很多。",
         prompt: "Gmail 要怎麼搜尋特定寄件者、有附件、或某個日期之後的信?",
         search: "Gmail 搜尋",
@@ -604,7 +604,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       },
       {
         title: "收件匣分頁",
-        teaser: "促銷信、電子報自動分流,不會洗掉重要信件",
+        teaser: "促銷信、電子報自動分流,避免重要信件被淹沒",
         one: "開啟分頁後,系統會自動把廣告、社群通知歸到別的分頁,主要收件匣只留真正該看的信。",
         prompt: "Gmail 的收件匣分頁要怎麼開啟或調整?",
         search: "Gmail 收件匣分頁",
@@ -678,8 +678,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         rule: "公司規定：群組預設「外部人員不能寄信進來」。如果因專案需求要統一收外部來信(例如客戶、廠商、應徵者寄到同一個位址),請向昱翔提出申請開啟權限,不要自己改設定。"
       },
       {
-        title: "回信時改主旨",
-        teaser: "入口藏在一個箭頭裡,不點開根本找不到",
+        title: "回信時修改主旨",
+        teaser: "入口位於收件者欄位旁的展開箭頭",
         one: "回信時主旨會自動固定成「Re: 原主旨」,看起來不能改。其實要先點收件者旁邊那個小箭頭把欄位展開,才會出現編輯主旨的選項。",
         prompt: "Gmail 回信的時候要怎麼修改主旨?",
         search: "Gmail 回覆 編輯主旨",
@@ -765,15 +765,15 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "邀請開會與回應邀請",
         teaser: "怎麼發會議邀請、加 Meet 連結,收到邀請怎麼回應",
-        one: "建立行事曆活動時可以直接加入 Google Meet 連結、邀請與會者;收到邀請的人記得按接受/婉拒/暫定,讓對方知道你去不去,不要已讀不回。",
+        one: "建立行事曆活動時可以直接加入 Google Meet 連結、邀請與會者;收到邀請後請回覆接受、暫定或婉拒,方便主辦人安排。",
         prompt: "怎麼在 Google 日曆建立會議並加入 Google Meet 連結?收到會議邀請要怎麼回應?",
         search: "Google 日曆 邀請 Meet 連結 回應",
         link: "https://support.google.com/calendar/?hl=zh-Hant"
       },
       {
         title: "待辦事項",
-        teaser: "個人待辦清單,side panel 就看得到",
-        one: "Google Tasks 可以列出自己的待辦事項,跟日曆、Gmail 共用同一個側邊面板,不用另外開一個 App。",
+        teaser: "個人待辦清單,在右側面板即可查看",
+        one: "Google Tasks 可以列出自己的待辦事項,跟日曆、Gmail 共用同一個右側面板,不用另外開一個 App。",
         prompt: "Google Tasks 待辦清單要怎麼用?",
         search: "Google Tasks",
         link: "https://support.google.com/tasks/?hl=zh-Hant"
@@ -791,7 +791,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "先裝到桌面、手機也要裝",
         teaser: "裝了並開通知,下面兩個聊天室才會真的看到訊息",
-        one: "這一站要先做。電腦版把 Chat 裝成桌面應用程式的步驟,在「Chrome 設定檔」那一區的「把常用網頁裝成桌面應用程式」有教;手機另外要裝 Google Chat App。兩邊都要允許通知——沒裝、沒開通知的話,就算加入了聊天室也不會知道有新訊息。",
+        one: "這一站要先做。電腦版把 Chat 裝成桌面應用程式的步驟,在「Chrome 設定檔」那一區的「把常用網頁裝成桌面應用程式」有教;手機另外要裝 Google Chat App。完成安裝並開啟通知後,才能即時收到聊天室的新訊息。",
         prompt: "手機要怎麼安裝 Google Chat App 並開啟通知?",
         search: "Google Chat App 通知",
         link: "https://support.google.com/chat/?hl=zh-Hant"
@@ -800,7 +800,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "Workspace疑難雜症聊天室",
         teaser: "所有 Workspace 使用問題的唯一窗口",
-        one: "任何操作卡住、不確定該怎麼做的,先用聊天室右上角的搜尋看有沒有人問過,沒有再發問。",
+        one: "任何操作卡住或不確定怎麼做時,先用聊天室右上角的搜尋確認是否已有相同問題;若沒有,再提出問題。",
         link: "https://chat.google.com/room/AAQAw6Nb2gs?cls=7",
         linkLabel: "加入聊天室"
       },
@@ -808,14 +808,14 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "良興公告中心",
         teaser: "全公司或全店的公告統一發布在這裡",
-        one: "取代一封封寄信、或另外開 LINE 群發公告。之後正式的通知都會貼在這個空間,加入之後留意通知。",
+        one: "公司正式通知以此空間發布。加入後請留意通知,避免錯過重要訊息。",
         link: "https://chat.google.com/room/AAQANsTBOoo?cls=7",
         linkLabel: "加入良興公告中心"
       },
       {
         title: "投票",
-        teaser: "排班意願、聚餐地點這類小事,直接在聊天室發起投票",
-        one: "不用再開 LINE 投票或另外做表單,聊天室裡就能直接發起投票、看結果。",
+        teaser: "需要快速蒐集意見時,可直接在聊天室發起投票",
+        one: "不用另外建立表單,聊天室裡就能直接發起投票並查看結果。",
         prompt: "Google Chat 要怎麼在聊天室裡發起投票?",
         search: "Google Chat 投票",
         link: "https://support.google.com/chat/?hl=zh-Hant"
@@ -823,7 +823,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       {
         title: "良興福委小助理",
         teaser: "管理部做的機器人,福委會相關問題直接問它",
-        one: "這是管理部自建的 Chat 應用程式,活動、補助這類福委會問題可以直接問它,不用再私訊承辦人。需要先安裝到你的 Chat 才能使用。",
+        one: "這是管理部自建的 Chat 應用程式。活動、補助等福委會問題可先直接詢問;需要人工協助時,再依指示聯絡承辦人。需要先安裝到你的 Chat 才能使用。",
         steps: [
           "在 Google Chat 左側點「新增」或搜尋框",
           "搜尋「良興福委小助理」",
@@ -834,8 +834,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       },
       {
         tier: "time",
-        title: "回覆與釘選,避免洗版",
-        teaser: "針對特定訊息回覆,重要訊息釘選起來,聊天室才不會變成流水帳",
+        title: "回覆與釘選,讓討論更集中",
+        teaser: "針對特定訊息回覆,重要訊息釘選起來,方便後續查找",
         one: "要回應某一則特定訊息時,用「回覆」讓它變成該則底下的討論串,不要另外發一則新訊息;重要的公告或連結可以「釘選」,固定顯示在聊天室的資訊看板,不會被洗到後面找不到。",
         prompt: "Google Chat 裡要怎麼回覆特定的一則訊息?怎麼釘選重要訊息?",
         search: "Google Chat 回覆 釘選",
@@ -843,8 +843,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       },
       {
         title: "在 Chat 裡指派任務",
-        teaser: "指派給特定同事並追蹤完成狀態,不用另外傳訊息提醒",
-        one: "在聊天室裡可以直接把任務指派給某個人,對方會收到通知、完成後可以標記,不用再另外傳訊息盯進度。",
+        teaser: "指派給特定同事並追蹤完成狀態,減少額外提醒",
+        one: "在聊天室裡可以直接把任務指派給特定同事,對方會收到通知,完成後也可以標記狀態。",
         prompt: "在 Google Chat 的聊天室裡,怎麼指派工作給某個特定同事?",
         search: "Google Chat 指派工作",
         link: "https://support.google.com/chat/answer/9920628?hl=zh-Hant"
@@ -852,7 +852,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       {
         title: "免打擾模式",
         teaser: "下班或專心工作時,先暫停通知",
-        one: "需要專心不被打斷,或下班後不想一直被通知,可以開啟免打擾;記得事後要關掉,不然重要訊息會一直漏接。",
+        one: "需要專注或非上班時間,可以開啟免打擾;恢復工作時請記得重新開啟通知,避免錯過重要訊息。",
         prompt: "Google Chat 的免打擾模式要怎麼開啟和關閉?",
         search: "Google Chat 免打擾",
         link: "https://support.google.com/chat/?hl=zh-Hant"
@@ -860,7 +860,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       {
         title: "預約傳訊息",
         teaser: "訊息先寫好,設定時間自動送出",
-        one: "半夜想到的事,可以先寫好訊息設定成上班時間才發送,不會半夜吵到人也不會自己忘記。",
+        one: "訊息可以先寫好並預約在上班時間發送,避免在非上班時間造成通知干擾,也不會忘記處理。",
         prompt: "Google Chat 要怎麼設定訊息排程,晚點自動送出?",
         search: "Google Chat 排程傳送 預約訊息",
         link: "https://support.google.com/chat/?hl=zh-Hant"
@@ -875,7 +875,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "舊信搬家,一次性的事,做完就不用再管。",
     waypoints: [
       {
-        title: "① 備份:你是哪個 Outlook 版本?",
+        title: "① 備份：先確認 Outlook 版本",
         teaser: "刪任何信之前,先備份一份——顏色對應下面兩站",
         one: "在刪除任何信件前,務必先完整備份,以防誤刪重要郵件。你是哪個 Outlook 版本,備份的選單路徑不太一樣——下面用顏色分開,這個顏色會延續到後面「搬信」那一站,方便你認自己的路。",
         diagram: `
@@ -926,7 +926,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       {
         title: "② 整理:先刪信,再搬家",
         teaser: "不分版本,雲端容量有限,搬上去前先清一輪",
-        one: "良興配發每人 10GB 個人容量(不含公司/部門共用雲端空間),Gmail 信件、雲端硬碟、相片全部共用這一份。不管你是哪個版本,先把備份留著保命之後,回頭清一輪目前的信箱——不然舊信搬上去也是很快就要刪,等於白搬一次。",
+        one: "良興配發每人 10GB 個人容量(不含公司/部門共用雲端空間),Gmail 信件、雲端硬碟、相片全部共用這一份。不管使用哪個版本,請先保留備份,再清理目前的信箱;否則搬移後仍可能很快面臨容量不足。",
         groups: [
           {
             title: "查看資料夾容量,找出佔用空間大的部分",
@@ -947,8 +947,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         ]
       },
       {
-        title: "③ 搬信:再匯出一次,依版本挑工具",
-        teaser: "前置是重新備份一次,然後跟第一站一樣問版本",
+        title: "③ 搬信：重新匯出後，依 Outlook 版本選擇工具",
+        teaser: "先重新備份,再依第一站確認的版本選擇工具",
         one: "整理完信箱之後,再重新做一次「①備份」的匯出動作,產生一份不含垃圾信的最新 .pst——這樣搬過去的才是乾淨版本。接著一樣先確認你是哪個 Outlook 版本(顏色跟①備份那一站一致),依版本選對應的搬信工具。",
         groups: [
           {
@@ -972,7 +972,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
               "完全關閉 Outlook(含新版 Outlook),不然 .pst 檔案會被鎖住讀不到",
               "雙擊 run.bat,程式會自動抓目前使用中的 .pst(已經是你整理過的乾淨版本,不用手動重新匯出)",
               "瀏覽器會自動跳出,用公司 Workspace 帳號登入並允許權限",
-              "看到「Google 尚未驗證這個應用程式」的警告,點「進階→前往→允許」即可,這是正常的",
+              "這是公司提供的 PstToGmail 工具。確認畫面顯示的工具名稱與教材一致後,點「進階→前往→允許」完成授權;若名稱不同,請截圖回報管理部",
               "程式開始自動匯入,完成後會顯示匯入的信件數量;中斷再跑會自動略過已匯入的,不會重複"
             ]
           },
@@ -990,7 +990,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           "一定要用公司 Workspace 帳號登入,不是個人 @gmail.com,不然系統會擋下來。",
           "執行搬信工具前一定要完全關閉 Outlook,不然備份檔會被鎖住讀不到。",
           "信件會保留原本的寄收日期,不是匯入當天的日期。",
-          "信箱大的話會匯很久(約 30-60 封/分鐘),過程中斷了重新執行會自動接續、不會重複匯入。"
+          "信箱大的話會匯很久(約 30-60 封/分鐘),過程中斷了重新執行會自動接續、不會重複匯入。",
+          "匯入完成後,請抽查幾封不同年份、含附件的信件是否完整,並保留原始 PST 備份;若有缺漏或錯誤訊息,請截圖回報管理部。"
         ],
         link: "https://support.google.com/mail/?hl=zh-Hant"
       }
