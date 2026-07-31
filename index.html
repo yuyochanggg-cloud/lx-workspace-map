@@ -245,7 +245,7 @@
     transition: all 0.15s ease;
   }
   .waypoint.done .waypoint-dot {
-    background: var(--rc); border-color: var(--rc); color: var(--panel);
+    background: var(--rc) !important; border-color: var(--rc) !important; color: var(--panel) !important;
   }
   .waypoint-card {
     background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius);
@@ -259,14 +259,12 @@
   .waypoint-head:hover { background: var(--rc-soft); }
   .waypoint-title { font-weight: 600; font-size: 15px; flex: 1; }
   .waypoint-teaser { font-size: 13px; color: var(--ink-soft); display: block; margin-top: 2px; font-weight: 400; }
-  .tier-badge {
-    font-family: var(--font-latin); font-size: 10.5px; font-weight: 700;
-    letter-spacing: 0.03em; padding: 2px 8px; border-radius: 999px;
-    flex-shrink: 0; white-space: nowrap;
+  .tier-dot {
+    width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
   }
-  .tier-must { background: var(--tier-must-soft); color: var(--tier-must); }
-  .tier-time { background: var(--tier-time-soft); color: var(--tier-time); }
-  .tier-self { background: var(--tier-self-soft); color: var(--tier-self); }
+  .tier-dot.tier-must { background: var(--tier-must); }
+  .tier-dot.tier-time { background: var(--tier-time); }
+  .tier-dot.tier-self { background: var(--tier-self); }
   .legend { display: flex; gap: 14px; flex-wrap: wrap; margin: 4px 0 20px; font-size: 12.5px; color: var(--ink-soft); }
   .legend span { display: inline-flex; align-items: center; gap: 6px; }
   .legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
@@ -362,6 +360,8 @@ const ICONS = {
   cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
   chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4V4z"/></svg>'
 };
+
+const TIER_RANK = { must: 0, time: 1, self: 2 };
 
 const DATA = [
   {
@@ -985,18 +985,19 @@ function openRegion(regionId) {
         <span><i style="background:var(--tier-self);"></i>自學</span>
       </div>
       <div class="trail">
-        ${region.waypoints.map((w, i) => `
+        ${region.waypoints
+          .map((w, i) => ({ w, i }))
+          .sort((a, b) => TIER_RANK[a.w.tier || 'self'] - TIER_RANK[b.w.tier || 'self'])
+          .map(({ w, i }, pos) => `
           <div class="waypoint ${done[regionId + ":" + i] ? "done" : ""}" data-idx="${i}">
-            <div class="waypoint-dot">${i + 1}</div>
+            <div class="waypoint-dot" style="background:var(--tier-${w.tier || 'self'}-soft);border-color:var(--tier-${w.tier || 'self'});color:var(--tier-${w.tier || 'self'});">${pos + 1}</div>
             <div class="waypoint-card">
               <button class="waypoint-head">
                 <span style="flex:1;">
                   <span class="waypoint-title">${w.title}</span>
                   <span class="waypoint-teaser">${w.teaser}</span>
                 </span>
-                <span class="tier-badge tier-${w.tier || 'self'}">${
-                  w.tier === 'must' ? '必帶' : w.tier === 'time' ? '有時間' : '自學'
-                }</span>
+                <span class="tier-dot tier-${w.tier || 'self'}"></span>
                 <span class="chevron">›</span>
               </button>
               <div class="waypoint-detail">${waypointDetail(w, regionId, i)}</div>
