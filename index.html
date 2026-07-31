@@ -19,6 +19,13 @@
     --chat: #5b5fa6;
     --chat-soft: #e2e2f0;
 
+    --tier-must: #c0392b;
+    --tier-must-soft: #f7dedb;
+    --tier-time: #b8860b;
+    --tier-time-soft: #f4ecd2;
+    --tier-self: #4a7a5e;
+    --tier-self-soft: #dfe9e2;
+
     --radius: 14px;
     --font-latin: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
     --font-cjk: "PingFang TC", "Microsoft JhengHei", "Noto Sans TC", "Heiti TC", system-ui, sans-serif;
@@ -43,6 +50,13 @@
       --cal-soft: #17301f;
       --chat: #8c90d6;
       --chat-soft: #23253f;
+
+      --tier-must: #e07868;
+      --tier-must-soft: #3a211d;
+      --tier-time: #d9b358;
+      --tier-time-soft: #362c14;
+      --tier-self: #7fb494;
+      --tier-self-soft: #1c2b21;
     }
   }
   :root[data-theme="dark"] {
@@ -50,12 +64,18 @@
     --line: #28405a; --accent: #4fd1db; --accent-ink: #bdf3f7; --accent-soft: #163842;
     --chrome: #d9a44e; --chrome-soft: #34291a; --gmail: #d97086; --gmail-soft: #35202a;
     --cal: #6bbf98; --cal-soft: #17301f; --chat: #8c90d6; --chat-soft: #23253f;
+    --tier-must: #e07868; --tier-must-soft: #3a211d;
+    --tier-time: #d9b358; --tier-time-soft: #362c14;
+    --tier-self: #7fb494; --tier-self-soft: #1c2b21;
   }
   :root[data-theme="light"] {
     --ink: #16233a; --ink-soft: #445168; --paper: #eef1f3; --panel: #ffffff;
     --line: #c7d0d4; --accent: #1c7c8c; --accent-ink: #0d4650; --accent-soft: #dcedef;
     --chrome: #b8862e; --chrome-soft: #f3e6cc; --gmail: #a33b54; --gmail-soft: #f3dde2;
     --cal: #3e7f5b; --cal-soft: #dcede3; --chat: #5b5fa6; --chat-soft: #e2e2f0;
+    --tier-must: #c0392b; --tier-must-soft: #f7dedb;
+    --tier-time: #b8860b; --tier-time-soft: #f4ecd2;
+    --tier-self: #4a7a5e; --tier-self-soft: #dfe9e2;
   }
 
   * { box-sizing: border-box; }
@@ -239,6 +259,17 @@
   .waypoint-head:hover { background: var(--rc-soft); }
   .waypoint-title { font-weight: 600; font-size: 15px; flex: 1; }
   .waypoint-teaser { font-size: 13px; color: var(--ink-soft); display: block; margin-top: 2px; font-weight: 400; }
+  .tier-badge {
+    font-family: var(--font-latin); font-size: 10.5px; font-weight: 700;
+    letter-spacing: 0.03em; padding: 2px 8px; border-radius: 999px;
+    flex-shrink: 0; white-space: nowrap;
+  }
+  .tier-must { background: var(--tier-must-soft); color: var(--tier-must); }
+  .tier-time { background: var(--tier-time-soft); color: var(--tier-time); }
+  .tier-self { background: var(--tier-self-soft); color: var(--tier-self); }
+  .legend { display: flex; gap: 14px; flex-wrap: wrap; margin: 4px 0 20px; font-size: 12.5px; color: var(--ink-soft); }
+  .legend span { display: inline-flex; align-items: center; gap: 6px; }
+  .legend i { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
   .chevron { color: var(--ink-soft); transition: transform 0.15s ease; flex-shrink: 0; }
   .waypoint.open .chevron { transform: rotate(90deg); }
   .waypoint-detail { display: none; padding: 0 16px 18px; border-top: 1px solid var(--line); }
@@ -341,6 +372,7 @@ const DATA = [
     desc: "先把瀏覽器本身設定好,後面才順。",
     waypoints: [
       {
+        tier: "must",
         title: "建立與切換 Chrome 設定檔",
         teaser: "公司帳號開一個獨立設定檔,跟個人帳號分開用",
         one: "設定檔就像瀏覽器裡的「不同使用者」:公司帳號一個、個人帳號一個,各自的書籤、密碼、登入狀態完全分開,不會混在一起。這也是下一站「書籤與密碼搬家」的前提——要先有公司設定檔,才有地方可以匯入。",
@@ -361,6 +393,7 @@ const DATA = [
         link: "https://support.google.com/chrome/?hl=zh-Hant"
       },
       {
+        tier: "time",
         title: "把常用網頁裝成桌面應用程式",
         teaser: "chat.google.com、mail.google.com 都可以裝成獨立視窗,不用夾在分頁裡",
         one: "Chrome 可以把任何網頁「安裝」成一個獨立的桌面應用程式:有自己的視窗、工作列圖示,不用從一堆分頁裡找。Google Chat 尤其建議這樣裝,才收得到桌面通知(見 Chat 那一區的說明);Gmail、日曆想常駐也可以比照辦理。",
@@ -373,6 +406,7 @@ const DATA = [
         ]
       },
       {
+        tier: "must",
         title: "Gemini in Chrome",
         teaser: "側邊欄直接問 AI,它看得到你正在瀏覽的畫面",
         one: "不用截圖說明「這顆按鈕在哪」,Gemini 會直接讀取你當下打開的網頁來回答。",
@@ -382,6 +416,7 @@ const DATA = [
         tip: "裝好的技能不會自動套用,每次要用都要在輸入框打「/」,選單裡挑出你要的技能(例如「良興 Workspace 小幫手」)才會生效。忘記打「/」,問到的就是一般的 Gemini,不會照公司的規則回答。"
       },
       {
+        tier: "must",
         title: "良興 Workspace 小幫手（技能）",
         teaser: "把公司的使用規則裝進 Gemini,問問題不用每次解釋方案限制",
         one: "這是公司自建的,不是 Google 官方功能。裝好之後每次開 Gemini in Chrome 側邊欄都會沿用,問任何 Workspace 問題都會照公司的規則回答。",
@@ -476,6 +511,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "讓信件自己分類,不用每天手動整理。",
     waypoints: [
       {
+        tier: "must",
         title: "分類信件：標籤與篩選器",
         teaser: "設定一次,以後同類的信自動歸類",
         one: "篩選器可以依寄件者、主旨、關鍵字自動加標籤、封存或轉寄,不用每封手動處理。",
@@ -489,6 +525,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         ]
       },
       {
+        tier: "time",
         title: "搜尋:找信、找訊息",
         teaser: "與其一封封翻,不如學會怎麼搜",
         one: "信箱不用手動整理到完美,重點是搜得到。Gmail 和 Chat 都有很強的搜尋,學會之後找東西的時間會差很多。",
@@ -547,6 +584,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/mail/?hl=zh-Hant"
       },
       {
+        tier: "time",
         title: "通訊錄:公司內部查名錄,對外的才要匯入",
         teaser: "公司同仁不用匯入,原本 Outlook 的外部聯絡人才需要",
         one: "跟日曆不一樣,聯絡人沒有「共用」這個選項。但公司內部同事的資料已經都在裡面,不用自己建;只有原本在 Outlook 建立的外部聯絡人(客戶、廠商)才需要用下面的方式搬過來。",
@@ -625,6 +663,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         ]
       },
       {
+        tier: "must",
         title: "副本、密件副本、回覆全部",
         teaser: "誰看得到誰的信箱,以及按錯「回覆全部」的風險",
         one: "副本(Cc)欄位裡的每個人都看得到彼此的信箱;密件副本(Bcc)則是收件人看不到其他密件副本名單。群發給外部或大量對象時用密件副本,保護大家的信箱不外流。",
@@ -646,6 +685,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "統一用共用,不要用匯入。",
     waypoints: [
       {
+        tier: "must",
         title: "共用（不要用匯入）",
         teaser: "把原本的日曆搬過來,公司統一用共用,不用匯入",
         one: "匯入(.ics 檔)已知會有活動重複、循環規則跑掉、之後新增不會同步等問題。改用共用:在舊帳號的日曆設定把日曆共用給公司帳號,再從公司帳號接受即可。",
@@ -671,6 +711,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/calendar/?hl=zh-Hant"
       },
       {
+        tier: "time",
         title: "檢視與分享日曆",
         teaser: "看同事有沒有空、把自己的日曆分享出去",
         one: "工作上常需要知道同事什麼時候有空,或把自己的日曆分享給主管、同事檢視。",
@@ -679,6 +720,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/calendar/?hl=zh-Hant"
       },
       {
+        tier: "must",
         title: "邀請開會與回應邀請",
         teaser: "怎麼發會議邀請、加 Meet 連結,收到邀請怎麼回應",
         one: "建立行事曆活動時可以直接加入 Google Meet 連結、邀請與會者;收到邀請的人記得按接受/婉拒/暫定,讓對方知道你去不去,不要已讀不回。",
@@ -704,6 +746,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "有問題,找這裡的人,不要自己猜。",
     waypoints: [
       {
+        tier: "must",
         title: "先裝到桌面、手機也要裝",
         teaser: "裝了並開通知,下面兩個聊天室才會真的看到訊息",
         one: "這一站要先做。電腦版把 Chat 裝成桌面應用程式的步驟,在「Chrome 設定檔」那一區的「把常用網頁裝成桌面應用程式」有教;手機另外要裝 Google Chat App。兩邊都要允許通知——沒裝、沒開通知的話,就算加入了聊天室也不會知道有新訊息。",
@@ -712,6 +755,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/chat/?hl=zh-Hant"
       },
       {
+        tier: "must",
         title: "Workspace疑難雜症聊天室",
         teaser: "所有 Workspace 使用問題的唯一窗口",
         one: "任何操作卡住、不確定該怎麼做的,先用聊天室右上角的搜尋看有沒有人問過,沒有再發問。",
@@ -719,6 +763,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         linkLabel: "加入聊天室"
       },
       {
+        tier: "must",
         title: "良興公告中心",
         teaser: "全公司或全店的公告統一發布在這裡",
         one: "取代一封封寄信、或另外開 LINE 群發公告。之後正式的通知都會貼在這個空間,加入之後留意通知。",
@@ -746,6 +791,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         stepsLabel: "安裝方式"
       },
       {
+        tier: "time",
         title: "回覆與釘選,避免洗版",
         teaser: "針對特定訊息回覆,重要訊息釘選起來,聊天室才不會變成流水帳",
         one: "要回應某一則特定訊息時,用「回覆」讓它變成該則底下的討論串,不要另外發一則新訊息;重要的公告或連結可以「釘選」,固定顯示在聊天室的資訊看板,不會被洗到後面找不到。",
@@ -933,6 +979,11 @@ function openRegion(regionId) {
           <p class="region-desc">${region.desc}</p>
         </div>
       </div>
+      <div class="legend">
+        <span><i style="background:var(--tier-must);"></i>必帶(現場示範)</span>
+        <span><i style="background:var(--tier-time);"></i>有時間再帶</span>
+        <span><i style="background:var(--tier-self);"></i>自學</span>
+      </div>
       <div class="trail">
         ${region.waypoints.map((w, i) => `
           <div class="waypoint ${done[regionId + ":" + i] ? "done" : ""}" data-idx="${i}">
@@ -943,6 +994,9 @@ function openRegion(regionId) {
                   <span class="waypoint-title">${w.title}</span>
                   <span class="waypoint-teaser">${w.teaser}</span>
                 </span>
+                <span class="tier-badge tier-${w.tier || 'self'}">${
+                  w.tier === 'must' ? '必帶' : w.tier === 'time' ? '有時間' : '自學'
+                }</span>
                 <span class="chevron">›</span>
               </button>
               <div class="waypoint-detail">${waypointDetail(w, regionId, i)}</div>
