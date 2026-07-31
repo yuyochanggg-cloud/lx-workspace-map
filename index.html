@@ -695,9 +695,24 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         rule: "公司規定：日曆一律用共用,不用匯入。有問題到【Workspace疑難雜症QA】問。"
       },
       {
+        tier: "must",
+        title: "加入良興行事曆",
+        teaser: "全公司或全店的行程統一看這本,點連結就能加入",
+        one: "點右邊的連結加入「良興行事曆」,加入之後它會出現在自己行事曆左側的「其他日曆」清單裡,不用自己另外找活動。",
+        link: "https://calendar.google.com/calendar/u/0?cid=Y18yMDdmMmZkMzg3NTdkMmY3NWRkYjZkMjcxODMxODUwNzNkZjhhYmRlMmM4NzYwYWE2MDcxOTE4NGI2YzBjOGJlQGdyb3VwLmNhbGVuZGFyLmdvb2dsZS5jb20",
+        linkLabel: "加入良興行事曆"
+      },
+      {
         title: "會議室預約",
-        teaser: "排會議時直接加會議室,系統自動判斷有沒有被佔用",
-        one: "建立活動時可以新增「房間」,系統會顯示哪些會議室當下有空,避免兩組人排到同一間。",
+        teaser: "先訂閱看三間會議室的空檔,排會議時再直接加房間",
+        one: "建立活動時可以新增「房間」,系統會顯示哪些會議室當下有空,避免兩組人排到同一間。但要先訂閱過會議室,自己的行事曆才看得到它們的空檔——這個設定只要做一次。",
+        stepsLabel: "訂閱三間會議室(只需操作一次)",
+        steps: [
+          "日曆頁面左下角找到「其他日曆」",
+          "點「其他日曆」旁邊的加號",
+          "選「瀏覽資源」",
+          "把三間會議室都打勾,就能在自己的行事曆看到它們的空檔"
+        ],
         prompt: "我在建立行事曆活動時,要怎麼加入會議室資源?",
         search: "Google 日曆 會議室",
         link: "https://support.google.com/calendar/?hl=zh-Hant"
