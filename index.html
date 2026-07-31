@@ -18,6 +18,8 @@
     --cal-soft: #dcede3;
     --chat: #5b5fa6;
     --chat-soft: #e2e2f0;
+    --migrate: #2f6690;
+    --migrate-soft: #d9e6ee;
 
     --tier-must: #c0392b;
     --tier-must-soft: #f7dedb;
@@ -50,6 +52,8 @@
       --cal-soft: #17301f;
       --chat: #8c90d6;
       --chat-soft: #23253f;
+      --migrate: #6ba3c7;
+      --migrate-soft: #1c2c38;
 
       --tier-must: #e07868;
       --tier-must-soft: #3a211d;
@@ -64,6 +68,7 @@
     --line: #28405a; --accent: #4fd1db; --accent-ink: #bdf3f7; --accent-soft: #163842;
     --chrome: #d9a44e; --chrome-soft: #34291a; --gmail: #d97086; --gmail-soft: #35202a;
     --cal: #6bbf98; --cal-soft: #17301f; --chat: #8c90d6; --chat-soft: #23253f;
+    --migrate: #6ba3c7; --migrate-soft: #1c2c38;
     --tier-must: #e07868; --tier-must-soft: #3a211d;
     --tier-time: #d9b358; --tier-time-soft: #362c14;
     --tier-self: #7fb494; --tier-self-soft: #1c2b21;
@@ -73,6 +78,7 @@
     --line: #c7d0d4; --accent: #1c7c8c; --accent-ink: #0d4650; --accent-soft: #dcedef;
     --chrome: #b8862e; --chrome-soft: #f3e6cc; --gmail: #a33b54; --gmail-soft: #f3dde2;
     --cal: #3e7f5b; --cal-soft: #dcede3; --chat: #5b5fa6; --chat-soft: #e2e2f0;
+    --migrate: #2f6690; --migrate-soft: #d9e6ee;
     --tier-must: #c0392b; --tier-must-soft: #f7dedb;
     --tier-time: #b8860b; --tier-time-soft: #f4ecd2;
     --tier-self: #4a7a5e; --tier-self-soft: #dfe9e2;
@@ -348,7 +354,7 @@
   <div id="route-container"></div>
 
   <footer>
-    最後更新：2026-07-28 ｜ 內容對應第一次教育訓練(Chrome、Gmail、行事曆、Chat)。雲端硬碟將在第二次教育訓練後補上。
+    最後更新：2026-07-29 ｜ 內容對應第一次教育訓練(Chrome、Gmail、行事曆、Chat),外加獨立的 Outlook→Gmail 轉移作業。雲端硬碟將在第二次教育訓練後補上。
     <br>進度會存在這台裝置的瀏覽器裡,換裝置或清除瀏覽資料會重新計算。
   </footer>
 </div>
@@ -358,7 +364,8 @@ const ICONS = {
   chrome: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6M4.2 7.5l5.2 3M14.6 13.5l5.2 3M19.8 7.5l-5.2 3M9.4 13.5l-5.2 3"/></svg>',
   gmail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6l9 7 9-7"/></svg>',
   cal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>',
-  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4V4z"/></svg>'
+  chat: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16v12H8l-4 4V4z"/></svg>',
+  migrate: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="8" height="7" rx="1.2"/><path d="M13 9.5h7M17 6l3 3.5-3 3.5"/><rect x="12" y="14" width="10" height="7" rx="1.2"/></svg>'
 };
 
 const TIER_RANK = { must: 0, time: 1, self: 2 };
@@ -837,6 +844,111 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         prompt: "Google Chat 要怎麼設定訊息排程,晚點自動送出?",
         search: "Google Chat 排程傳送 預約訊息",
         link: "https://support.google.com/chat/?hl=zh-Hant"
+      }
+    ]
+  },
+  {
+    id: "migrate",
+    num: "05",
+    color: "migrate",
+    title: "Outlook → Gmail 轉移作業",
+    desc: "舊信搬家,一次性的事,做完就不用再管。",
+    waypoints: [
+      {
+        title: "舊信備份與整理",
+        teaser: "搬家前先清一遍,不要佔用寶貴的容量",
+        one: "良興配發每人 10GB 個人容量(不含公司/部門共用雲端空間),Gmail 信件、雲端硬碟、相片全部共用這一份。舊信件通常很龐大,搬過去前先整理一次,不然一下就把容量塞滿。",
+        groups: [
+          {
+            title: "① 備份匯出成 .pst 檔(Outlook 2016)",
+            items: [
+              "點選「檔案」→「開啟與匯出」→「匯入/匯出」",
+              "選「匯出到檔案」→下一步",
+              "選「Outlook 資料檔(.pst)」→下一步",
+              "選取帳號最上層信箱名稱,勾選「包含子資料夾」→下一步",
+              "按「瀏覽」選擇存放位置(例如桌面)→完成"
+            ]
+          },
+          {
+            title: "② 備份匯出成 .pst 檔(Outlook 2007)",
+            items: [
+              "點選「檔案」→「匯入及匯出」",
+              "選「匯出至檔案」→下一步",
+              "選「個人資料夾檔案(.pst)」→下一步",
+              "選取帳號最上層信箱名稱,勾選「包含子資料夾」→下一步",
+              "選擇存放位置→完成"
+            ]
+          },
+          {
+            title: "③ 查看資料夾容量,找出佔用空間大的部分",
+            items: [
+              "左側資料夾清單找到要查看的信箱或資料夾",
+              "在該項目按右鍵→內容(Properties)",
+              "點「資料夾大小(Folder Size)」按鈕",
+              "視窗會顯示「總大小(含子資料夾)」,依序檢視各資料夾"
+            ]
+          },
+          {
+            title: "④ 清理不需要的舊信件",
+            items: [
+              "刪除較舊或用不到的信(附件龐大的通知信、過期系統郵件、垃圾信等)",
+              "刪除的信不會被計入未來 Google Workspace 的容量"
+            ]
+          }
+        ],
+        tip: [
+          "匯出完的 .pst 備份檔要妥善保存,建議另外複製一份到外接硬碟或網路磁碟,以防萬一。",
+          "備份、整理都做完,再進行下一站「搬信」——順序不要顛倒,不然會把垃圾信也一起搬過去。"
+        ]
+      },
+      {
+        title: "搬信:依你的 Outlook 版本挑一種",
+        teaser: "2016 用官方工具,2007 用自製工具,VPS 要多一步",
+        one: "先看自己是哪一種情況,對應方法不同:Outlook 2016(本機可操作)用官方工具 GWMMO;Outlook 2007(本機可操作)用自製工具 PstToGmail;Outlook 2007 在 VPS/遠端主機,先把備份檔拉到 T 槽再用 PstToGmail。分版本的原因:官方 GWMMO 依賴 Outlook 的元件,在 2016 正常運作,但在 2007 會因版本不相容而失敗,所以 2007 改用自製工具直接呼叫 Gmail API。",
+        groups: [
+          {
+            title: "① Outlook 2016(本機可操作)→ 官方工具 GWMMO",
+            items: [
+              "先依上一站的步驟,把要搬的信匯出成 .pst",
+              "到 tools.google.com/dlpage/gsmmo 下載並安裝 GWMMO",
+              "開啟 GWMMO,輸入公司 Workspace 信箱並登入(個人 Gmail 帳號會被擋)",
+              "選「從 PST 檔案匯入」,選剛才匯出的 .pst",
+              "可一併勾選日曆、通訊錄,或設定只匯入某個日期之後/之前的信,按【遷移】",
+              "速度較慢,約 1-2 秒一封;中途取消,已處理的仍會保留",
+              "匯入完的信會依 .pst 檔名存成標籤,在 Gmail 左側展開該標籤才看得到(標籤最上層點進去是空的,要點裡面的子標籤),可以自己搬到正確位置"
+            ]
+          },
+          {
+            title: "② Outlook 2007(本機可操作)→ PstToGmail 工具",
+            items: [
+              "找管理部索取 PstToGmail 工具包",
+              "把整個工具包資料夾複製到桌面",
+              "完全關閉 Outlook(含新版 Outlook),不然 .pst 檔案會被鎖住讀不到",
+              "雙擊 run.bat,程式會自動找到 Outlook 的 .pst 檔",
+              "瀏覽器會自動跳出,用公司 Workspace 帳號登入並允許權限",
+              "看到「Google 尚未驗證這個應用程式」的警告,點「進階→前往→允許」即可,這是正常的",
+              "程式開始自動匯入,完成後會顯示匯入的信件數量;中斷再跑會自動略過已匯入的,不會重複"
+            ]
+          },
+          {
+            title: "③ Outlook 2007 在遠端主機(VPS)",
+            items: [
+              "跟②做法相同,差別只在信件檔案要先搬過來",
+              "遠端連線到那台跑 Outlook 2007 的主機",
+              "在 Outlook 找「檔案→帳戶設定→資料檔」,記下 .pst 檔案路徑後關閉 Outlook",
+              "把該 .pst 檔複製到公司的 T 槽共用磁碟",
+              "在自己的電腦執行 run.bat,程式問路徑時貼上 T 槽的完整路徑",
+              "接下來跟②一樣:登入公司帳號、允許權限、等待自動匯入"
+            ]
+          }
+        ],
+        tip: [
+          "一定要用公司 Workspace 帳號登入,不是個人 @gmail.com,不然系統會擋下來。",
+          "執行前一定要完全關閉 Outlook,不然備份檔會被鎖住讀不到。",
+          "信件會保留原本的寄收日期,不是匯入當天的日期。",
+          "信箱大的話會匯很久(約 30-60 封/分鐘),過程中斷了重新執行會自動接續、不會重複匯入。"
+        ],
+        link: "https://support.google.com/mail/?hl=zh-Hant"
       }
     ]
   }
