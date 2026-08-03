@@ -873,6 +873,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     color: "migrate",
     title: "Outlook → Gmail 轉移作業",
     desc: "舊信搬家,一次性的事,做完就不用再管。",
+    link: "https://drive.google.com/drive/folders/1Z5bBgx1_Pflha7BT8kEYkQQqkOV-Hho9?usp=drive_link",
+    linkLabel: "詳細圖文教學SOP請點這",
     waypoints: [
       {
         title: "① 備份：先確認 Outlook 版本",
@@ -1158,6 +1160,7 @@ function openRegion(regionId) {
         <div>
           <h2>${region.title}</h2>
           <p class="region-desc">${region.desc}</p>
+          ${region.link ? `<a class="link-btn" href="${region.link}" target="_blank" rel="noopener">${region.linkLabel || "前往官方說明中心"} ↗</a>` : ""}
         </div>
       </div>
       <div class="legend">
