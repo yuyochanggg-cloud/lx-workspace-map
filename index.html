@@ -1075,19 +1075,20 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "權限設定與角色",
         teaser: "五個角色，權限差在哪要先分清楚",
-        one: "共用雲端硬碟的權限分五個層級，差別在能不能刪除、能不能搬動或共用檔案。新增成員時系統預設會給「內容管理員」，權限其實不低，記得依實際需求往下調。",
+        one: "共用雲端硬碟的權限分五個層級，差別在能不能刪除、能不能搬動或共用檔案。新增成員時的預設角色與公司設定有關；目前公司設定會給「內容管理員」，權限其實不低，記得依實際需求往下調。",
         groups: [
           {
             title: "五級角色權限對照",
             items: [
               "管理員——最高權限：刪除硬碟、新增/移除成員、改任何人的權限",
-              "內容管理員（預設角色）——可新增/編輯/移動檔案，但不能真的刪除（丟進垃圾桶）",
+              "內容管理員（目前公司常見預設）——預設可新增/編輯/移動/刪除檔案；若只需要建立與編輯，改用「協作者」",
               "協作者——主要的內容建立/編輯者，但不能刪除或搬動檔案位置",
               "加註者——只能留言/提建議，不能改內容、不能共用給別人",
               "檢視者——只能看、只能開檔案"
             ]
           }
         ],
+        tip: "課堂練習：用一個測試檔，分別確認內容管理員、協作者、檢視者能不能編輯、移動與刪除。",
         prompt: "Google共用雲端硬碟的五個成員角色，權限差異整理成表格給我",
         search: "共用雲端硬碟 成員角色 權限",
         link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
@@ -1096,7 +1097,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "我的雲端硬碟 vs 共用雲端硬碟",
         teaser: "先判斷檔案是個人工作、部門共用，還是公司共用",
-        one: "我的雲端硬碟適合個人工作中的檔案；共用雲端硬碟適合部門或公司共同使用的資料。共用雲端硬碟的檔案由團隊持有，人員異動後仍能保留。Starter 目前可以限制哪些群組或成員看得到特定資料夾，但下載、複製、轉傳等限制目前鎖不住，所以資料放進去前要先三思。",
+        one: "我的雲端硬碟適合個人工作中的檔案；共用雲端硬碟適合部門或公司共同使用的資料。共用雲端硬碟的檔案由團隊持有，人員異動後仍能保留。以公司目前 Starter 方案與管理員設定為準，現在可以限制哪些群組或成員看得到特定資料夾；但無法保證檔案被下載後不再複製或轉傳，所以資料放進去前要先三思。",
         groups: [
           {
             title: "先用這三個問題判斷",
@@ -1107,6 +1108,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
+        tip: "課堂練習：拿一份個人草稿、一份部門資料、一份跨部門資料，說出應放在哪裡，以及資料被下載或轉傳後是否能接受。",
         prompt: "Google Drive 的「我的雲端硬碟」和「共用雲端硬碟」差在哪裡？我這份資料應該放哪裡？",
         search: "我的雲端硬碟 共用雲端硬碟 差異",
         link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
@@ -1115,23 +1117,24 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "資料歸檔規則",
         teaser: "看得到自己部門的，也看得到公司共用的",
-        one: "共用雲端硬碟裡，每個人看得到自己部門的資料夾，還有全公司共用的資料夾，請照分類歸檔進去。基本上就是只看得到「自己部門」跟「共用」這兩塊。",
+        one: "共用雲端硬碟裡，實際可見範圍取決於硬碟成員、資料夾權限與限縮存取設定；公司目前依資料夾分類讓同仁使用自己部門與公司內部共用的資料夾，不要把「自己部門／共用」當成 Google 固定規則。",
         groups: [
           {
             title: "怎麼判斷放哪裡",
             items: [
               "資料涉及公司內不只一個部門 → 放「公司內部共用」",
-              "資料只有一個內部部門要用，但要共享給廠商 → 放「部門資料夾」"
+              "資料只有一個內部部門要用，但要共享給廠商 → 放「部門資料夾」",
+              "資料只有一個內部部門使用，且不對外共享 → 放該部門資料夾"
             ]
           }
         ],
-        rule: "下載、複製、轉傳，系統目前都攔不住。放資料前先想：這群看得到的人轉出去，能不能接受？有疑慮就先不要上雲端。"
+        rule: "以公司目前設定來說，下載後的複製與轉傳無法完全攔住。放資料前先想：這群看得到的人轉出去，能不能接受？有疑慮就先不要上雲端。課堂練習：拿三份資料案例，說出「公司內部共用」或「部門資料夾」的判斷理由。"
       },
       {
         tier: "self",
         title: "捷徑（shortcut）：不是複製",
         teaser: "捷徑失效、看得到打不開，都是誤會捷徑的意思",
-        one: "捷徑只是連結，不是複製一份。原始檔案被刪除或搬走，捷徑就跟著失效；捷徑本身也不能再指向另一個捷徑。",
+        one: "捷徑只是連結，不是複製一份。原始檔案被刪除、移到你無權限的位置，或取消你的存取權，捷徑可能失效；單純移動檔案不一定會失效。捷徑本身也不能再指向另一個捷徑。",
         groups: [
           {
             title: "常見誤會",
@@ -1162,8 +1165,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         groups: [
           { title: "Docs ↔ Word", icon: "docs", items: ["自動存檔，不用按存檔", "多人同時編輯，共用連結後看到的永遠是最新版"] },
           { title: "Sheets ↔ Excel", icon: "sheets", items: ["常用函數多數都有對應版本", "差異在協同即時性，不用寄檔案來回合併版本"] },
-          { title: "Slides ↔ PowerPoint", icon: "slides", items: ["佈景主題比 PowerPoint 陽春一些", "換來的是多人可以同時修改不同頁面"] },
-          { title: "表單（Office 沒有原生對應）", icon: "forms", items: ["線上問卷／報名表／意見調查", "填答自動彙整進 Sheets，不用手動輸入整理", "共用帳號開「收集電子郵件地址」，全部填答只會顯示同一個帳號，無法辨識填答者"] }
+          { title: "Slides ↔ PowerPoint", icon: "slides", items: ["可沿用 Google Slides 主題／公版，但複雜 PowerPoint 版型轉換前要先測試", "換來的是多人可以同時修改不同頁面"] },
+          { title: "Forms ↔ Microsoft Forms", icon: "forms", items: ["線上問卷／報名表／意見調查", "填答自動彙整進 Sheets，不用手動輸入整理", "共用帳號建立表單時，表單擁有者與回覆試算表會歸在共用帳號；能不能辨識填答者，要看是否開啟「收集電子郵件地址」及填答者登入限制"] }
         ]
       },
       {
@@ -1189,14 +1192,14 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "time",
         title: "版控：版本記錄",
         teaser: "改壞了不怕，版本都找得回來",
-        one: "共編的檔案，系統會自動儲存每次修改。用版本記錄可以查回過去任何時間點的內容，不用擔心誰改壞了東西。",
+        one: "共編的檔案會自動儲存修改。版本記錄可以查看目前保留的歷史版本；部分未命名修訂可能被合併，重要節點要主動命名，才方便找回。",
         steps: [
           "查看過去紀錄：點選「檔案」>「版本歷史紀錄」>「檢視版本歷史紀錄」，右側會列出時間軸，點選就能看當時的內容",
           "為重要版本命名：在右側版本列表，點版本旁邊的「三個點」圖示>選「為這個版本命名」（例如：填入「8/14 門市修訂版」），方便以後快速找回",
           "還原或複製：想恢復成舊版，點該版本後按頂端「還原這個版本」；只想拿舊版當參考，可以選「建立副本」"
         ],
         stepsLabel: "怎麼做版控",
-        tip: "快速鍵直接叫出版本歷史紀錄：Windows 按 Ctrl+Shift+Alt+H，Mac 按 Cmd+Option+Shift+H",
+        tip: ["快速鍵直接叫出版本歷史紀錄：Windows 按 Ctrl+Shift+Alt+H，Mac 按 Cmd+Option+Shift+H", "課堂練習：命名一個重要版本，再建立一份舊版副本，確認兩者用途不同"],
         prompt: "Google Docs/Sheets/Slides 的版本記錄要怎麼用，怎麼幫版本命名？",
         search: "版本記錄 命名版本",
         link: "https://support.google.com/docs/answer/190843?hl=zh-Hant"
@@ -1211,12 +1214,12 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             title: "三種模式差在哪",
             items: [
               "編輯模式——正常編輯，改了就是真的改了",
-              "建議模式——改的內容變成待確認的標記，原作者按「勾勾」才會正式套用",
+              "建議模式——改的內容變成待確認的標記，由具編輯權限的人員依流程接受或拒絕",
               "檢視模式——單純唯讀畫面，把其他人的建議標記、留言都先隱藏，適合只想好好讀一遍的時候用"
             ]
           }
         ],
-        tip: ["建議模式快速鍵：Windows 按 Ctrl+Alt+Shift+I，Mac 按 Cmd+Option+Shift+I", "留言裡打「@」加名字，可以直接通知特定同事"],
+        tip: ["建議模式快速鍵：Windows 按 Ctrl+Alt+Shift+I，Mac 按 Cmd+Option+Shift+I", "留言裡打「@」加名字，可以直接通知特定同事", "課堂練習：一人提出建議，另一位具編輯權限的人接受或拒絕，確認流程"],
         prompt: "Google Docs 的建議模式要怎麼開，跟編輯模式差在哪？",
         search: "建議模式",
         link: "https://support.google.com/docs/?hl=zh-Hant"
@@ -1226,7 +1229,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         title: "寄信改連結",
         teaser: "夾檔案改用雲端硬碟連結，不用附件",
         one: "Gmail 撰寫視窗裡選「使用雲端硬碟插入檔案」，可以選「以雲端硬碟連結傳送」或「以附件傳送」。用 Docs/Sheets/Slides/表單建立的檔案，系統只認連結這個選項；PDF、圖片這類原生檔案才能選附件。送出時系統會自動檢查收件人有沒有權限，沒有的話會提示你要不要開權限。",
-        tip: ["對內一律用連結——之後更新檔案，對方看到的永遠是最新版，不會有好幾個版本在飛", "對外看性質：要協作用連結＋授權；要留存證據（報價單、合約、確認函）用附件 PDF，連結的話你事後改了對方都看得到，反而會有爭議"],
+        tip: ["對內協作預設用連結——之後更新檔案，對方看到的永遠是最新版，不會有好幾個版本在飛", "對外看性質：要協作用連結＋授權；要留存證據（報價單、合約、確認函）用附件 PDF，連結的話你事後改了對方都看得到，反而會有爭議", "課堂練習：寄出一個雲端連結與一個 PDF，說出兩者後續修改與留存上的差異"],
         prompt: "Gmail 怎麼用雲端硬碟插入檔案，連結跟附件差在哪？",
         search: "使用雲端硬碟插入檔案",
         link: "https://support.google.com/mail/answer/2487407?hl=zh-Hant"
@@ -1235,8 +1238,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "self",
         title: "離線存取",
         teaser: "沒網路也能編輯，但要先設定",
-        one: "要用 Chrome 瀏覽器安裝離線外掛，並在雲端硬碟設定裡勾選同步，才能離線編輯 Docs/Sheets/Slides。",
-        tip: "一個 Chrome 設定檔只能開一組帳號的離線功能——切換公司/個人帳號的人要注意（呼應第一堂 Chrome 設定檔那站）",
+        one: "要用 Chrome 或 Edge 瀏覽器設定離線存取，並在雲端硬碟設定裡勾選同步，才能離線編輯 Docs/Sheets/Slides。",
+        tip: "同一個 Chrome 設定檔的離線設定容易互相影響，切換公司／個人帳號的人建議使用專用設定檔（呼應第一堂 Chrome 設定檔那站）",
         prompt: "Google 文件/試算表/簡報要怎麼設定離線存取？",
         search: "離線存取",
         link: "https://support.google.com/docs/answer/6388102?hl=zh-Hant"
@@ -1248,27 +1251,27 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     num: "08",
     color: "ai",
     title: "AI 協作",
-    desc: "授權範圍不一樣，但現在三個都能用。",
+    desc: "授權範圍不一樣：Gemini 與 Gemini Notebook 先學，Spark 依帳號開放狀況。",
     waypoints: [
       {
         tier: "must",
         title: "Gemini in 生產力工具",
         icon: "gemini",
         teaser: "Docs/Sheets/Slides 裡的星星圖示",
-        one: "登入部門共用的 Gmail Pro 帳號，打開 Docs/Sheets/Slides 就能看到星星圖示，點開就是 Gemini。這不是公司整體方案（Starter）內建的，是靠部門另外買的 Pro 帳號才有。",
+        one: "依公司目前帳號配置，登入部門共用的 Gmail Pro 帳號，打開 Docs/Sheets/Slides 才會看到星星圖示，點開就是 Gemini。這不是公司整體方案（Starter）內建的，是靠部門另外買的 Pro 帳號才有。若看不到星星，先確認目前登入的帳號與管理員開放狀況。",
         groups: [
           { title: "Docs：協助我寫作", icon: "docs", items: ["從空白直接生成整篇草稿，可以抓 Gmail/Chat/Drive 裡的資料當素材", "生成後可以用「正式化／縮短／延伸／換句話說」快速調整"] },
           { title: "Sheets：公式修正、智慧填入", icon: "sheets", items: ["公式出錯時一鍵修正，AI 分析邏輯並解釋錯在哪，但修正是用猜的，複雜巢狀公式要驗算", "加強型智慧填入可以偵測欄位關聯自動補值，但金額/合約/薪資這類敏感資料還是要人工覆核"] },
-          { title: "Slides：一句話生成簡報", icon: "slides", items: ["輸入需求直接生成多頁簡報，可連動 Drive 裡的文件/試算表", "生成出來是可以逐一點選修改的物件，不是一張死圖"] }
+          { title: "Slides：一句話生成簡報", icon: "slides", items: ["在功能已開放的帳號中，可輸入需求生成簡報並連動 Drive 裡的文件／試算表", "使用「產生簡報」時，投影片內容可逐一點選修改；仍要檢查版型、文字與事實，不是產出後直接交付"] }
         ],
-        rule: "只有登入部門共用的 Pro 帳號才看得到星星圖示，自己的公司帳號不會有——這是授權範圍的問題，不是設定錯誤。"
+        rule: "依目前公司配置，部門 Pro 帳號才看得到星星圖示；若沒有看到，先核對登入帳號、授權與管理員設定，不要直接判斷是操作錯誤。課堂練習：用一個已核准的素材產生一頁投影片，確認文字與物件可以修改，再人工核對內容。"
       },
       {
         tier: "self",
         title: "Spark",
         icon: "gemini",
         teaser: "24小時待命的 AI agent，寄信給它就會動手做",
-        one: "Spark 是 Google 2026 年新推出的常駐 AI agent，可以透過 Gmail 收指令、自動跑多步驟任務，串連 Gmail、日曆、Drive、Docs、Sheets、Slides。一樣要登入部門共用的 Pro 帳號才能用。",
+        one: "Spark 是 Google 的 AI agent，可以透過 Gmail 收指令、自動跑多步驟任務，串連 Gmail、日曆、Drive、Docs、Sheets、Slides；功能與開放範圍依地區、方案、帳號及管理員設定而定。目前列為延伸認識，只有實際看到功能才操作，不能把「部門 Pro 帳號」當成一定能用的條件。",
         prompt: "Gemini Spark 是什麼，要怎麼用 Gmail 下指令給它？",
         search: "Gemini Spark",
         link: "https://gemini.google/overview/agent/spark/"
@@ -1277,18 +1280,19 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         tier: "must",
         title: "Gemini Notebook（原 NotebookLM）",
         icon: "gemini",
-        teaser: "Business Starter 內建，功能與額度依方案及管理員設定而定",
-        one: "Gemini Notebook（原 NotebookLM）是 Business Starter 內建的核心服務，不用額外買、也不用登入部門的 Pro 帳號；但實際功能與使用額度仍依公司方案及管理員設定而定。上傳合約、保單、SOP、教材這類文件當「來源」，它只根據你上傳的文件回答，不會憑空生成，適合整理龐雜的內部文件。",
+        teaser: "Business Starter 可作為核心服務使用，功能與額度依方案及管理員設定而定",
+        one: "Gemini Notebook（原 NotebookLM）目前在 Business Starter 可作為核心服務使用，不用額外買、也不用登入部門的 Pro 帳號；但實際功能與使用額度仍依公司方案及管理員設定而定。上傳合約、保單、SOP、教材這類公司允許的文件當「來源」，回答會以來源為主要依據，但仍可能誤讀或產生錯誤，重要內容一定要核對來源。",
         groups: [
           {
             title: "實用功能",
             items: [
-              "自動生成雙人對談 Podcast 語音摘要，支援中文",
-              "自動製作簡報、學習卡片、測驗題、心智圖",
-              "支援 Docs、Slides、PDF、網址、YouTube 影片當來源"
+              "可生成雙人對談 Podcast 語音摘要；語言與功能依帳號實際開放狀況",
+              "可產出簡報草稿、學習卡片、測驗題、心智圖；不等於已完成的公司公版或可直接交付的 PPTX",
+              "支援 Docs、Slides、PDF、網址、YouTube 影片當來源；使用前仍要確認來源權限與公司資料政策"
             ]
           }
         ],
+        tip: "課堂練習：放入兩份已核准的來源，提出一個問題，回頭核對回答是否真的能在來源中找到依據。",
         prompt: "Gemini Notebook 怎麼用，可以上傳哪些類型的文件當資料來源？",
         search: "Gemini Notebook 使用教學",
         link: "https://workspace.google.com/products/notebooklm/"
