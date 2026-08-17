@@ -34,12 +34,12 @@
     --v2007vps: #8347a8;
     --v2007vps-soft: #ecdcf3;
 
-    --tier-must: #c0392b;
-    --tier-must-soft: #f7dedb;
-    --tier-time: #b8860b;
-    --tier-time-soft: #f4ecd2;
-    --tier-self: #4a7a5e;
-    --tier-self-soft: #dfe9e2;
+    --tier-must: #c4493d;
+    --tier-must-soft: #f9e2df;
+    --tier-time: #b97918;
+    --tier-time-soft: #f8eccf;
+    --tier-self: #4c7a5d;
+    --tier-self-soft: #e3eee7;
 
     --radius: 14px;
     --font-latin: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
@@ -81,11 +81,11 @@
       --v2007vps: #c090dd;
       --v2007vps-soft: #33223c;
 
-      --tier-must: #e07868;
+      --tier-must: #f07a6c;
       --tier-must-soft: #3a211d;
-      --tier-time: #d9b358;
+      --tier-time: #e0b65a;
       --tier-time-soft: #362c14;
-      --tier-self: #7fb494;
+      --tier-self: #85b999;
       --tier-self-soft: #1c2b21;
     }
   }
@@ -101,9 +101,9 @@
     --v2016: #6bb3e0; --v2016-soft: #1c2e3a;
     --v2007: #e0a05e; --v2007-soft: #3a2a18;
     --v2007vps: #c090dd; --v2007vps-soft: #33223c;
-    --tier-must: #e07868; --tier-must-soft: #3a211d;
-    --tier-time: #d9b358; --tier-time-soft: #362c14;
-    --tier-self: #7fb494; --tier-self-soft: #1c2b21;
+    --tier-must: #f07a6c; --tier-must-soft: #3a211d;
+    --tier-time: #e0b65a; --tier-time-soft: #362c14;
+    --tier-self: #85b999; --tier-self-soft: #1c2b21;
   }
   :root[data-theme="light"] {
     --ink: #16233a; --ink-soft: #445168; --paper: #eef1f3; --panel: #ffffff;
@@ -117,9 +117,9 @@
     --v2016: #2b7bb3; --v2016-soft: #d7e8f2;
     --v2007: #c0692a; --v2007-soft: #f2e0d0;
     --v2007vps: #8347a8; --v2007vps-soft: #ecdcf3;
-    --tier-must: #c0392b; --tier-must-soft: #f7dedb;
-    --tier-time: #b8860b; --tier-time-soft: #f4ecd2;
-    --tier-self: #4a7a5e; --tier-self-soft: #dfe9e2;
+    --tier-must: #c4493d; --tier-must-soft: #f9e2df;
+    --tier-time: #b97918; --tier-time-soft: #f8eccf;
+    --tier-self: #4c7a5d; --tier-self-soft: #e3eee7;
   }
 
   * { box-sizing: border-box; }
@@ -383,7 +383,7 @@
 
   footer {
     margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--line);
-    font-size: 12.5px; color: var(--ink-soft);
+    font-size: 12.5px; color: var(--ink-soft); text-align: center;
   }
   footer a { color: var(--accent); text-decoration: none; }
   footer a:hover { text-decoration: underline; }
@@ -412,7 +412,9 @@
     第一次教育訓練課程製作日期：2026-07-29 ｜ 內容涵蓋 Chrome、Gmail、行事曆、Chat,外加獨立的 Outlook→Gmail 轉移作業
     <br>第二次教育訓練課程製作日期：2026-08-14 ｜ 內容涵蓋 Drive、生產力工具、AI 協作
     <br>進度會存在這台裝置的瀏覽器裡,換裝置或清除瀏覽資料會重新計算。
-    <br>製作：管理部 張云宥 ｜ 有問題請到<a href="https://chat.google.com/room/AAQAw6Nb2gs?cls=7" target="_blank" rel="noopener">【Workspace疑難雜症QA】聊天室</a>
+    <br>這裡的勾選只供個人複習,不代表完課;正式完課請以良興雲端學院的紀錄為準。
+    <br>有問題歡迎隨時到<a href="https://chat.google.com/room/AAQAw6Nb2gs?cls=7" target="_blank" rel="noopener">【Workspace疑難雜症QA】聊天室</a>，你的提問也許可以解決許多人的困擾
+    <br>製作：管理部 張云宥
   </footer>
 </div>
 
@@ -1070,6 +1072,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     sessionDivider: "第二次教育訓練 · Drive／生產力工具／AI協作",
     waypoints: [
       {
+        tier: "must",
         title: "權限設定與角色",
         teaser: "五個角色，權限差在哪要先分清楚",
         one: "共用雲端硬碟的權限分五個層級，差別在能不能刪除、能不能搬動或共用檔案。新增成員時系統預設會給「內容管理員」，權限其實不低，記得依實際需求往下調。",
@@ -1090,6 +1093,26 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
       },
       {
+        tier: "must",
+        title: "我的雲端硬碟 vs 共用雲端硬碟",
+        teaser: "先判斷檔案是個人工作、部門共用，還是公司共用",
+        one: "我的雲端硬碟適合個人工作中的檔案；共用雲端硬碟適合部門或公司共同使用的資料。共用雲端硬碟的檔案由團隊持有，人員異動後仍能保留。Starter 目前可以限制哪些群組或成員看得到特定資料夾，但下載、複製、轉傳等限制目前鎖不住，所以資料放進去前要先三思。",
+        groups: [
+          {
+            title: "先用這三個問題判斷",
+            items: [
+              "只是自己工作中的草稿或暫存 → 先放「我的雲端硬碟」",
+              "部門或多個部門要共同使用 → 放「共用雲端硬碟」的對應資料夾",
+              "即使只限特定群組可見，也要先確認資料被下載、複製或轉傳後是否能接受"
+            ]
+          }
+        ],
+        prompt: "Google Drive 的「我的雲端硬碟」和「共用雲端硬碟」差在哪裡？我這份資料應該放哪裡？",
+        search: "我的雲端硬碟 共用雲端硬碟 差異",
+        link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
+      },
+      {
+        tier: "must",
         title: "資料歸檔規則",
         teaser: "看得到自己部門的，也看得到公司共用的",
         one: "共用雲端硬碟裡，每個人看得到自己部門的資料夾，還有全公司共用的資料夾，請照分類歸檔進去。基本上就是只看得到「自己部門」跟「共用」這兩塊。",
@@ -1114,6 +1137,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "從 Office 習慣切入，學怎麼跟工具搭配用。",
     waypoints: [
       {
+        tier: "time",
         title: "工具介紹：對照 Office 的習慣",
         teaser: "Docs/Sheets/Slides/表單，分別對應原本用的東西",
         one: "從 Office 換過來，先知道每個工具對應原本的哪一套，上手會快很多。",
@@ -1125,6 +1149,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         ]
       },
       {
+        tier: "time",
         title: "版控：版本記錄",
         teaser: "改壞了不怕，版本都找得回來",
         one: "共編的檔案，系統會自動儲存每次修改。用版本記錄可以查回過去任何時間點的內容，不用擔心誰改壞了東西。",
@@ -1140,6 +1165,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/docs/answer/190843?hl=zh-Hant"
       },
       {
+        tier: "must",
         title: "共編三模式：編輯／建議／檢視",
         teaser: "不想直接改掉別人寫的，切成建議模式",
         one: "共編時右上角有個編輯模式圖示（鉛筆），點下去可以在編輯／建議／檢視三種模式切換，不用整份文件都用同一種方式改。",
@@ -1159,6 +1185,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://support.google.com/docs/?hl=zh-Hant"
       },
       {
+        tier: "must",
         title: "寄信改連結",
         teaser: "夾檔案改用雲端硬碟連結，不用附件",
         one: "Gmail 撰寫視窗裡選「使用雲端硬碟插入檔案」，可以選「以雲端硬碟連結傳送」或「以附件傳送」。用 Docs/Sheets/Slides/表單建立的檔案，系統只認連結這個選項；PDF、圖片這類原生檔案才能選附件。送出時系統會自動檢查收件人有沒有權限，沒有的話會提示你要不要開權限。",
@@ -1177,6 +1204,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
     desc: "授權範圍不一樣，但現在三個都能用。",
     waypoints: [
       {
+        tier: "must",
         title: "Gemini in 生產力工具",
         icon: "gemini",
         teaser: "Docs/Sheets/Slides 裡的星星圖示",
@@ -1189,6 +1217,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         rule: "只有登入部門共用的 Pro 帳號才看得到星星圖示，自己的公司帳號不會有——這是授權範圍的問題，不是設定錯誤。"
       },
       {
+        tier: "self",
         title: "Spark",
         icon: "gemini",
         teaser: "24小時待命的 AI agent，寄信給它就會動手做",
@@ -1198,10 +1227,11 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         link: "https://gemini.google/overview/agent/spark/"
       },
       {
-        title: "Gemini Notebook（原 NotebookLM）",
+        tier: "must",
+        title: "Gemini Notebook",
         icon: "gemini",
-        teaser: "免費內建，不用額外授權，人人可用",
-        one: "Gemini Notebook（原 NotebookLM）是 Business Starter 內建的核心服務，不用額外買、也不用登入部門的 Pro 帳號，公司帳號直接能用。上傳合約、保單、SOP、教材這類文件當「來源」，它只根據你上傳的文件回答，不會憑空生成，適合整理龐雜的內部文件。",
+        teaser: "Business Starter 內建，功能與額度依方案及管理員設定而定",
+        one: "Gemini Notebook 是 Business Starter 內建的核心服務，不用額外買、也不用登入部門的 Pro 帳號；但實際功能與使用額度仍依公司方案及管理員設定而定。上傳合約、保單、SOP、教材這類文件當「來源」，它只根據你上傳的文件回答，不會憑空生成，適合整理龐雜的內部文件。",
         groups: [
           {
             title: "實用功能",
