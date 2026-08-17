@@ -1126,6 +1126,24 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           }
         ],
         rule: "下載、複製、轉傳，系統目前都攔不住。放資料前先想：這群看得到的人轉出去，能不能接受？有疑慮就先不要上雲端。"
+      },
+      {
+        tier: "self",
+        title: "捷徑（shortcut）：不是複製",
+        teaser: "捷徑失效、看得到打不開，都是誤會捷徑的意思",
+        one: "捷徑只是連結，不是複製一份。原始檔案被刪除或搬走，捷徑就跟著失效；捷徑本身也不能再指向另一個捷徑。",
+        groups: [
+          {
+            title: "常見誤會",
+            items: [
+              "以為建捷徑＝多一份備份，其實原始檔不見了，捷徑就跟著壞掉",
+              "看得到捷徑不代表打得開，還要另外對原始檔案有存取權限"
+            ]
+          }
+        ],
+        prompt: "Google 雲端硬碟的捷徑（shortcut）是什麼，跟直接複製檔案有什麼不同？",
+        search: "雲端硬碟 捷徑",
+        link: "https://support.google.com/drive/answer/9700156?hl=zh-Hant"
       }
     ]
   },
@@ -1145,8 +1163,27 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           { title: "Docs ↔ Word", icon: "docs", items: ["自動存檔，不用按存檔", "多人同時編輯，共用連結後看到的永遠是最新版"] },
           { title: "Sheets ↔ Excel", icon: "sheets", items: ["常用函數多數都有對應版本", "差異在協同即時性，不用寄檔案來回合併版本"] },
           { title: "Slides ↔ PowerPoint", icon: "slides", items: ["佈景主題比 PowerPoint 陽春一些", "換來的是多人可以同時修改不同頁面"] },
-          { title: "表單（Office 沒有原生對應）", icon: "forms", items: ["線上問卷／報名表／意見調查", "填答自動彙整進 Sheets，不用手動輸入整理"] }
+          { title: "表單（Office 沒有原生對應）", icon: "forms", items: ["線上問卷／報名表／意見調查", "填答自動彙整進 Sheets，不用手動輸入整理", "共用帳號開「收集電子郵件地址」，全部填答只會顯示同一個帳號，無法辨識填答者"] }
         ]
+      },
+      {
+        tier: "time",
+        title: "Office 檔案接軌：轉檔眉角",
+        teaser: "巨集不支援、格式跑版，這幾個坑先知道",
+        one: "上傳 Office 檔案時，可以選擇保留原格式編輯，或轉換成 Google 格式，兩者的版本記錄、共編體驗差很多。",
+        groups: [
+          {
+            title: "幾個真的會卡住的地方",
+            items: [
+              "上傳設定裡有個「將上傳的檔案轉換成 Google 文件編輯器格式」開關，要不要開先想清楚",
+              "Excel 巨集（VBA）完全不支援，轉檔直接消失，複雜的樞紐分析表也可能跑版",
+              "從 Excel 貼到 Sheets，數字開頭的 0 會不見（被當數值）；要保留純值用「選擇性貼上→只貼值」，但只能同一份試算表內用，不能跨檔案"
+            ]
+          }
+        ],
+        prompt: "Excel 檔案上傳到 Google Sheets，巨集、格式跟公式會發生什麼事？",
+        search: "Excel 轉 Google Sheets 相容性",
+        link: "https://support.google.com/docs/?hl=zh-Hant"
       },
       {
         tier: "time",
@@ -1193,6 +1230,16 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         prompt: "Gmail 怎麼用雲端硬碟插入檔案，連結跟附件差在哪？",
         search: "使用雲端硬碟插入檔案",
         link: "https://support.google.com/mail/answer/2487407?hl=zh-Hant"
+      },
+      {
+        tier: "self",
+        title: "離線存取",
+        teaser: "沒網路也能編輯，但要先設定",
+        one: "要用 Chrome 瀏覽器安裝離線外掛，並在雲端硬碟設定裡勾選同步，才能離線編輯 Docs/Sheets/Slides。",
+        tip: "一個 Chrome 設定檔只能開一組帳號的離線功能——切換公司/個人帳號的人要注意（呼應第一堂 Chrome 設定檔那站）",
+        prompt: "Google 文件/試算表/簡報要怎麼設定離線存取？",
+        search: "離線存取",
+        link: "https://support.google.com/docs/answer/6388102?hl=zh-Hant"
       }
     ]
   },
@@ -1211,7 +1258,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         one: "登入部門共用的 Gmail Pro 帳號，打開 Docs/Sheets/Slides 就能看到星星圖示，點開就是 Gemini。這不是公司整體方案（Starter）內建的，是靠部門另外買的 Pro 帳號才有。",
         groups: [
           { title: "Docs：協助我寫作", icon: "docs", items: ["從空白直接生成整篇草稿，可以抓 Gmail/Chat/Drive 裡的資料當素材", "生成後可以用「正式化／縮短／延伸／換句話說」快速調整"] },
-          { title: "Sheets：公式修正、智慧填入", icon: "sheets", items: ["公式出錯時一鍵修正，AI 分析邏輯並解釋錯在哪", "加強型智慧填入可以偵測欄位關聯自動補值，但金額/合約/薪資這類敏感資料還是要人工覆核"] },
+          { title: "Sheets：公式修正、智慧填入", icon: "sheets", items: ["公式出錯時一鍵修正，AI 分析邏輯並解釋錯在哪，但修正是用猜的，複雜巢狀公式要驗算", "加強型智慧填入可以偵測欄位關聯自動補值，但金額/合約/薪資這類敏感資料還是要人工覆核"] },
           { title: "Slides：一句話生成簡報", icon: "slides", items: ["輸入需求直接生成多頁簡報，可連動 Drive 裡的文件/試算表", "生成出來是可以逐一點選修改的物件，不是一張死圖"] }
         ],
         rule: "只有登入部門共用的 Pro 帳號才看得到星星圖示，自己的公司帳號不會有——這是授權範圍的問題，不是設定錯誤。"
@@ -1228,10 +1275,10 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
       },
       {
         tier: "must",
-        title: "Gemini Notebook",
+        title: "Gemini Notebook（原 NotebookLM）",
         icon: "gemini",
         teaser: "Business Starter 內建，功能與額度依方案及管理員設定而定",
-        one: "Gemini Notebook 是 Business Starter 內建的核心服務，不用額外買、也不用登入部門的 Pro 帳號；但實際功能與使用額度仍依公司方案及管理員設定而定。上傳合約、保單、SOP、教材這類文件當「來源」，它只根據你上傳的文件回答，不會憑空生成，適合整理龐雜的內部文件。",
+        one: "Gemini Notebook（原 NotebookLM）是 Business Starter 內建的核心服務，不用額外買、也不用登入部門的 Pro 帳號；但實際功能與使用額度仍依公司方案及管理員設定而定。上傳合約、保單、SOP、教材這類文件當「來源」，它只根據你上傳的文件回答，不會憑空生成，適合整理龐雜的內部文件。",
         groups: [
           {
             title: "實用功能",
