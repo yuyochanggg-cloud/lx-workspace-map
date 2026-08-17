@@ -40,6 +40,8 @@
     --tier-time-soft: #f8eccf;
     --tier-self: #4c7a5d;
     --tier-self-soft: #e3eee7;
+    --practice: #9a6800;
+    --practice-soft: #fff4d6;
 
     --radius: 14px;
     --font-latin: ui-monospace, "SF Mono", "Cascadia Mono", Consolas, monospace;
@@ -87,6 +89,8 @@
       --tier-time-soft: #362c14;
       --tier-self: #85b999;
       --tier-self-soft: #1c2b21;
+      --practice: #f1c75b;
+      --practice-soft: #3b2c12;
     }
   }
   :root[data-theme="dark"] {
@@ -104,6 +108,7 @@
     --tier-must: #f07a6c; --tier-must-soft: #3a211d;
     --tier-time: #e0b65a; --tier-time-soft: #362c14;
     --tier-self: #85b999; --tier-self-soft: #1c2b21;
+    --practice: #f1c75b; --practice-soft: #3b2c12;
   }
   :root[data-theme="light"] {
     --ink: #16233a; --ink-soft: #445168; --paper: #eef1f3; --panel: #ffffff;
@@ -120,6 +125,7 @@
     --tier-must: #c4493d; --tier-must-soft: #f9e2df;
     --tier-time: #b97918; --tier-time-soft: #f8eccf;
     --tier-self: #4c7a5d; --tier-self-soft: #e3eee7;
+    --practice: #9a6800; --practice-soft: #fff4d6;
   }
 
   * { box-sizing: border-box; }
@@ -354,6 +360,16 @@
     font-size: 13.5px; color: var(--ink-soft); background: var(--paper);
     border-radius: 10px; padding: 12px 14px;
   }
+  .practice-box {
+    font-size: 13.5px; color: var(--ink); background: var(--practice-soft);
+    border: 1px solid var(--practice); border-left-width: 5px;
+    border-radius: 10px; padding: 12px 14px; font-weight: 700;
+  }
+  .practice-label {
+    display: block; color: var(--practice); font-weight: 800; margin-bottom: 4px;
+  }
+  .practice-box ul { margin: 6px 0 0; padding-left: 18px; }
+  .practice-box li { margin-bottom: 4px; }
   .steps-box ol { margin: 0; padding-left: 18px; }
   .steps-box li { margin-bottom: 4px; }
 
@@ -1088,7 +1104,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
-        tip: "課堂練習：用一個測試檔，分別確認內容管理員、協作者、檢視者能不能編輯、移動與刪除。",
+        practice: "用一個測試檔，分別確認內容管理員、協作者、檢視者能不能編輯、移動與刪除。",
         prompt: "Google共用雲端硬碟的五個成員角色，權限差異整理成表格給我",
         search: "共用雲端硬碟 成員角色 權限",
         link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
@@ -1108,7 +1124,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
-        tip: "課堂練習：拿一份個人草稿、一份部門資料、一份跨部門資料，說出應放在哪裡，以及資料被下載或轉傳後是否能接受。",
+        practice: "拿一份個人草稿、一份部門資料、一份跨部門資料，說出應放在哪裡，以及資料被下載或轉傳後是否能接受。",
         prompt: "Google Drive 的「我的雲端硬碟」和「共用雲端硬碟」差在哪裡？我這份資料應該放哪裡？",
         search: "我的雲端硬碟 共用雲端硬碟 差異",
         link: "https://support.google.com/a/users/answer/7212025?hl=zh-Hant"
@@ -1128,7 +1144,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
-        rule: "以公司目前設定來說，下載後的複製與轉傳無法完全攔住。放資料前先想：這群看得到的人轉出去，能不能接受？有疑慮就先不要上雲端。課堂練習：拿三份資料案例，說出「公司內部共用」或「部門資料夾」的判斷理由。"
+        rule: "以公司目前設定來說，下載後的複製與轉傳無法完全攔住。放資料前先想：這群看得到的人轉出去，能不能接受？有疑慮就先不要上雲端。",
+        practice: "拿三份資料案例，說出「公司內部共用」或「部門資料夾」的判斷理由。"
       },
       {
         tier: "self",
@@ -1199,7 +1216,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           "還原或複製：想恢復成舊版，點該版本後按頂端「還原這個版本」；只想拿舊版當參考，可以選「建立副本」"
         ],
         stepsLabel: "怎麼做版控",
-        tip: ["快速鍵直接叫出版本歷史紀錄：Windows 按 Ctrl+Shift+Alt+H，Mac 按 Cmd+Option+Shift+H", "課堂練習：命名一個重要版本，再建立一份舊版副本，確認兩者用途不同"],
+        tip: "快速鍵直接叫出版本歷史紀錄：Windows 按 Ctrl+Shift+Alt+H，Mac 按 Cmd+Option+Shift+H",
+        practice: "命名一個重要版本，再建立一份舊版副本，確認兩者用途不同",
         prompt: "Google Docs/Sheets/Slides 的版本記錄要怎麼用，怎麼幫版本命名？",
         search: "版本記錄 命名版本",
         link: "https://support.google.com/docs/answer/190843?hl=zh-Hant"
@@ -1219,7 +1237,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
-        tip: ["建議模式快速鍵：Windows 按 Ctrl+Alt+Shift+I，Mac 按 Cmd+Option+Shift+I", "留言裡打「@」加名字，可以直接通知特定同事", "課堂練習：一人提出建議，另一位具編輯權限的人接受或拒絕，確認流程"],
+        tip: ["建議模式快速鍵：Windows 按 Ctrl+Alt+Shift+I，Mac 按 Cmd+Option+Shift+I", "留言裡打「@」加名字，可以直接通知特定同事"],
+        practice: "一人提出建議，另一位具編輯權限的人接受或拒絕，確認流程",
         prompt: "Google Docs 的建議模式要怎麼開，跟編輯模式差在哪？",
         search: "建議模式",
         link: "https://support.google.com/docs/?hl=zh-Hant"
@@ -1229,7 +1248,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
         title: "寄信改連結",
         teaser: "夾檔案改用雲端硬碟連結，不用附件",
         one: "Gmail 撰寫視窗裡選「使用雲端硬碟插入檔案」，可以選「以雲端硬碟連結傳送」或「以附件傳送」。用 Docs/Sheets/Slides/表單建立的檔案，系統只認連結這個選項；PDF、圖片這類原生檔案才能選附件。送出時系統會自動檢查收件人有沒有權限，沒有的話會提示你要不要開權限。",
-        tip: ["對內協作預設用連結——之後更新檔案，對方看到的永遠是最新版，不會有好幾個版本在飛", "對外看性質：要協作用連結＋授權；要留存證據（報價單、合約、確認函）用附件 PDF，連結的話你事後改了對方都看得到，反而會有爭議", "課堂練習：寄出一個雲端連結與一個 PDF，說出兩者後續修改與留存上的差異"],
+        tip: ["對內協作預設用連結——之後更新檔案，對方看到的永遠是最新版，不會有好幾個版本在飛", "對外看性質：要協作用連結＋授權；要留存證據（報價單、合約、確認函）用附件 PDF，連結的話你事後改了對方都看得到，反而會有爭議"],
+        practice: "寄出一個雲端連結與一個 PDF，說出兩者後續修改與留存上的差異",
         prompt: "Gmail 怎麼用雲端硬碟插入檔案，連結跟附件差在哪？",
         search: "使用雲端硬碟插入檔案",
         link: "https://support.google.com/mail/answer/2487407?hl=zh-Hant"
@@ -1264,7 +1284,8 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
           { title: "Sheets：公式修正、智慧填入", icon: "sheets", items: ["公式出錯時一鍵修正，AI 分析邏輯並解釋錯在哪，但修正是用猜的，複雜巢狀公式要驗算", "加強型智慧填入可以偵測欄位關聯自動補值，但金額/合約/薪資這類敏感資料還是要人工覆核"] },
           { title: "Slides：一句話生成簡報", icon: "slides", items: ["在功能已開放的帳號中，可輸入需求生成簡報並連動 Drive 裡的文件／試算表", "使用「產生簡報」時，投影片內容可逐一點選修改；仍要檢查版型、文字與事實，不是產出後直接交付"] }
         ],
-        rule: "依目前公司配置，部門 Pro 帳號才看得到星星圖示；若沒有看到，先核對登入帳號、授權與管理員設定，不要直接判斷是操作錯誤。課堂練習：用一個已核准的素材產生一頁投影片，確認文字與物件可以修改，再人工核對內容。"
+        rule: "依目前公司配置，部門 Pro 帳號才看得到星星圖示；若沒有看到，先核對登入帳號、授權與管理員設定，不要直接判斷是操作錯誤。",
+        practice: "用一個已核准的素材產生一頁投影片，確認文字與物件可以修改，再人工核對內容。"
       },
       {
         tier: "self",
@@ -1292,7 +1313,7 @@ https://chat.google.com/room/AAQAw6Nb2gs?cls=7
             ]
           }
         ],
-        tip: "課堂練習：放入兩份已核准的來源，提出一個問題，回頭核對回答是否真的能在來源中找到依據。",
+        practice: "放入兩份已核准的來源，提出一個問題，回頭核對回答是否真的能在來源中找到依據。",
         prompt: "Gemini Notebook 怎麼用，可以上傳哪些類型的文件當資料來源？",
         search: "Gemini Notebook 使用教學",
         link: "https://workspace.google.com/products/notebooklm/"
@@ -1424,6 +1445,12 @@ function waypointDetail(w, regionId, idx) {
       ? `<ul style="margin:6px 0 0;padding-left:18px;">${w.tip.map(t => `<li style="margin-bottom:4px;">${t}</li>`).join("")}</ul>`
       : w.tip;
     blocks += `<div class="detail-block"><div class="note-box" style="border:1px solid var(--rc);"><b style="color:var(--rc);">小技巧：</b>${tipBody}</div></div>`;
+  }
+  if (w.practice) {
+    const practiceBody = Array.isArray(w.practice)
+      ? `<ul>${w.practice.map(p => `<li>${p}</li>`).join("")}</ul>`
+      : `<div>${w.practice}</div>`;
+    blocks += `<div class="detail-block"><div class="practice-box"><span class="practice-label">課堂練習</span>${practiceBody}</div></div>`;
   }
   if (w.assets) {
     blocks += `
